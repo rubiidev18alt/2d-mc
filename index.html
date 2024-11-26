@@ -9,7 +9,7 @@
             display: grid;
             grid-template-columns: repeat(10, 30px);
             gap: 1px;
-            background-color: #87ceeb; /* Sky blue */
+            background-color: #87ceeb; /* Sky blue background */
         }
         div {
             width: 30px;
@@ -21,10 +21,13 @@
 </head>
 <body>
     <script>
+        const colors = ["#fff", "green", "brown", "#87ceeb"]; // Empty, grass, dirt, sky
         for (let i = 0; i < 100; i++) {
             const block = document.createElement("div");
+            let colorIndex = 0;
             block.addEventListener("click", () => {
-                block.style.backgroundColor = block.style.backgroundColor === "green" ? "brown" : "green";
+                colorIndex = (colorIndex + 1) % colors.length;
+                block.style.backgroundColor = colors[colorIndex];
             });
             document.body.appendChild(block);
         }
