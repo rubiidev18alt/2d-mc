@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple 2D Minecraft</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: repeat(10, 30px);
+            gap: 1px;
+            background-color: #87ceeb; /* Sky blue */
+        }
+        div {
+            width: 30px;
+            height: 30px;
+            background-color: #fff; /* Empty block */
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        for (let i = 0; i < 100; i++) {
+            const block = document.createElement("div");
+            block.addEventListener("click", () => {
+                block.style.backgroundColor = block.style.backgroundColor === "green" ? "brown" : "green";
+            });
+            document.body.appendChild(block);
+        }
+    </script>
+</body>
+</html>
